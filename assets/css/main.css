@@ -491,6 +491,7 @@ div.item {
 	height: auto;
 	  justify-content: center;
 	  align-items: center;
+		text-overflow: scroll;
 }
 
 div.row {
@@ -501,7 +502,7 @@ div.row {
 
 a.button {
 	border-radius: 5px;
-	color: #5d5d5d;
+	color: black;
 	text-decoration: none;
 	padding: 0.6em 1.2em 0.6em 1.2em;
 	-moz-transition: background-color .25s ease-in-out;
@@ -510,7 +511,7 @@ a.button {
 	transition: background-color .25s ease-in-out;
 	outline: 0;
 
-	background-color: black;
+	background-color: lightgray;
 
 }
 

@@ -29,15 +29,6 @@ ol, ul {
 	list-style: none;
 }
 
-blockquote, q {
-	quotes: none;
-}
-
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -76,7 +67,6 @@ input, select, textarea {
 
 	body {
 		background: #252122;
-		background-image: url("images/bg02.png");
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -186,7 +176,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			.container {
-				width: calc(100% - 60px);
+				width: calc(100% - 80px);
 			}
 
 		}
@@ -194,7 +184,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			.container {
-				width: calc(100% - 80px);
+				width: calc(100% - 60px);
 			}
 
 		}

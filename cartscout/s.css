@@ -1,11 +1,191 @@
+@font-face {
+    font-family: 'Bubblegum'; /*a name to be used later*/
+    src: url('/fonts/BubblegumSans-Regular.ttf'); /*URL to font*/ 
+}
+
+@font-face {
+    font-family: 'Officina'; /*a name to be used later*/
+    src: url('/fonts/OfficinaSans-Regular.otf'); /*URL to font*/ 
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.step {
+    height: auto; width: 2px; background-color: rgb(184, 184, 184); margin-top:20px;margin-right: 6px;
+}
+
+.step.highlighted {
+    background-color: rgb(0, 0, 0); width: 2px;
+}
+
+.focused {
+    color: black;
+}
+
+#footer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: black;
+    padding: 32px;
+    padding-bottom: 256px;
+    padding-top: 96px;
+    color: rgb(158, 150, 137);
+}
+
+#footer a {
+    color: rgb(158, 150, 137);
+}
+
+#footer .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 64px;
+}
+
+#footer h1 {
+    font-size: 32px;
+    margin-bottom:32px;
+}
+
 body {
-    background-color: rgb(26, 26, 26);
+    /*background-color: rgb(26, 26, 26);
+    color: beige;*/
+    margin: 0px;
+    line-height: 1.6em;
+    font-size: 1.2em;
+    font-family:  "NunitoSans-Regular.ttf", "Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 1em;
+    margin-block-end: 0px;
+    color: rgb(25, 81, 84);
 }
 
 #header {
     position: absolute;
-    top: 0px;
+    top: 8px;
     left: 0px;
     width: 100%;
     z-index: 10;
+    line-height: 40px;
+
+    font-size: 32px;
+    font-family: Officina;
+    vertical-align: center;
+    text-align: center;
+    /*color: black;
+    background: bisque;*/
+
+    display: flex;
+    justify-content: left;
+    gap: 6px;
+}
+
+#logo {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.content-box {
+    /*background:rgb(190, 185, 176);*/
+    min-height: 200px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 600px;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.content-right {
+    display:flex; flex-direction: column; justify-content: center; max-width: 435px; z-index: 2;
+}
+.content-right top {
+    max-width: 435;
+}
+
+.btn {
+    background-color: rgb(150, 41, 41);
+    padding: 16px;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 10px;
+}
+.btn:hover {
+    background-color: brown;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial;
+}
+
+.glide {
+
+    position: absolute;
+    top: 100px;
+    animation-name: kf-fade, kf-glide;
+    animation-duration: 2s, 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1, infinite;
+}
+
+@keyframes kf-fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes kf-glide {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes kf-slide {
+    0% {
+        transform: translateX(-1000px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.slide {
+    position: relative;
+    max-height: 477px;
+    transition: all 2s ease 0s;
+    animation-name: kf-slide;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
 }

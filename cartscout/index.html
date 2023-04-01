@@ -9,138 +9,8 @@
     <link rel="stylesheet" href="s.css">
 
     <script>
-        function determineBrowser() {
-            //#region Feature Detection
-                // Opera 8.0+
-                var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-
-                // Firefox 1.0+
-                var isFirefox = typeof InstallTrigger !== 'undefined';
-
-                // Safari 3.0+ "[object HTMLElementConstructor]" 
-                var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
-
-                // Internet Explorer 6-11
-                var isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-                // Edge 20+
-                var isEdge = !isIE && !!window.StyleMedia;
-
-                // Chrome 1 - 79
-                var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
-                // Edge (based on chromium) detection
-                var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
-
-                // Blink engine detection
-                var isBlink = (isChrome || isOpera) && !!window.CSS;
-            //#endregion
-
-            //return browser.prototype._cachedResult =
-            return  isOpera ? 'Opera' :
-                    isFirefox ? 'Firefox' :
-                    isSafari ? 'Safari' :
-                    isChrome ? 'Chrome' :
-                    isIE ? 'IE' :
-                    isEdge ? 'Edge' :
-                    isBlink ? 'Blink' :
-                    "Chrome"; // default to Chrome
-        }
-    
-        let browser = determineBrowser();
-
-        window.onload = function() { //when the document is finished loading
-
-            if (browser == "Firefox" || browser == "Chrome") {
-                //document.getElementById("title").innerText += " available for " + browser;
-                switch (browser) {
-                    case "Firefox":
-                        document.getElementById("btnAdd1").innerHTML = "<a href=\"https://addons.mozilla.org/firefox/downloads/latest/cart-scout-amz-price-tracker\">Add to " + browser + " - It's Free<a>";
-                        break;
-                    default:
-                    case "Chrome":
-                        document.getElementById("btnAdd1").innerHTML = "<a href=\"https://chrome.google.com/webstore/detail/afankacbebechgbjdoliclmbpkkellhi\" target=\"blank\">Add to " + browser + " - It's Free<a>";
-                        break;
-                }
-                
-
-
-            }
-
-            let intro = document.getElementById("howitworks_video");
-
-
-            function checkVis() {
-                let yMid = intro.offsetTop + intro.offsetHeight / 2;
-
-                if (window.pageYOffset + window.innerHeight > yMid) {
-                    intro.play();
-                }
-
-                //console.log("intro " + intro + " type " + typeof(intro));
-                //console.log("middle " + yMid + " windowbottom " + (window.pageYOffset + window.innerHeight));
-            }
-
-            let lastState = 0;
-
-            intro.addEventListener("timeupdate", (e) => {
-                //console.log("time has been updated " + intro.currentTime);
-                if (intro.currentTime < 4) {
-                    if (lastState != 1) {
-                        console.log("1");
-                        lastState = 1;
-                        document.getElementById("step-2").classList.remove("highlighted");
-                        document.getElementById("step-3").classList.remove("highlighted");
-                        document.getElementById("step-1").classList.add("highlighted");
-                        document.getElementById("step-2").nextElementSibling.classList.remove("focused");
-                        document.getElementById("step-3").nextElementSibling.classList.remove("focused");
-                        document.getElementById("step-1").nextElementSibling.classList.add("focused");
-                    }
-                } else if (intro.currentTime < 8.1) {
-                    console.log("2");
-                    if (lastState != 2) {
-                        lastState = 2;
-                        document.getElementById("step-1").classList.remove("highlighted");
-                        document.getElementById("step-3").classList.remove("highlighted");
-                        document.getElementById("step-2").classList.add("highlighted");
-                        document.getElementById("step-1").nextElementSibling.classList.remove("focused");
-                        document.getElementById("step-3").nextElementSibling.classList.remove("focused");
-                        document.getElementById("step-2").nextElementSibling.classList.add("focused");
-                    }
-                } else if(lastState != 3) {
-                    console.log("3");
-                    lastState = 3;
-                    document.getElementById("step-1").classList.remove("highlighted");
-                    document.getElementById("step-2").classList.remove("highlighted");
-                    document.getElementById("step-3").classList.add("highlighted");
-                    document.getElementById("step-1").nextElementSibling.classList.remove("focused");
-                    document.getElementById("step-2").nextElementSibling.classList.remove("focused");
-                    document.getElementById("step-3").nextElementSibling.classList.add("focused");
-                }
-                
-
-            });
-
-            window.addEventListener("scroll", checkVis, false);
-            window.addEventListener("resize", checkVis, false);
-
-            console.log("next " + document.getElementById("step-1").nextElementSibling + " type " + typeof(document.getElementById("step-1").nextSibling))
-            document.getElementById("step-1").nextElementSibling.addEventListener("click", (e) => {
-                intro.currentTime = 0;
-                console.log("click 1");
-            });
-            document.getElementById("step-2").nextElementSibling.addEventListener("click", (e) => {
-                intro.currentTime = 4;
-            });
-            document.getElementById("step-3").nextElementSibling.addEventListener("click", (e) => {
-                intro.currentTime = 8.1;
-            });
-
-        }
-
-
-
-        </script>
+        let e=(t=!!window.opr&&!!opr.addons||!!window.opera||navigator.userAgent.indexOf(" OPR/")>=0,n="undefined"!=typeof InstallTrigger,d=/constructor/i.test(window.HTMLElement)||"[object SafariRemoteNotification]"===(!window.safari||"undefined"!=typeof safari&&window.safari.pushNotification).toString(),i=!!document.documentMode,s=!i&&!!window.StyleMedia,(o=!(!window.chrome||!window.chrome.webstore&&!window.chrome.runtime))&&navigator.userAgent.indexOf("Edg"),l=(o||t)&&!!window.CSS,t?"Opera":n?"Firefox":d?"Safari":o?"Chrome":i?"IE":s?"Edge":l?"Blink":"Chrome");var t,n,d,i,s,o,l;window.onload=function(){if("Firefox"==e||"Chrome"==e)switch(e){case"Firefox":document.getElementById("btnAdd1").innerHTML='<a href="https://addons.mozilla.org/firefox/downloads/latest/cart-scout-amz-price-tracker">Add to '+e+" - It's Free<a>";break;default:case"Chrome":document.getElementById("btnAdd1").innerHTML='<a href="https://chrome.google.com/webstore/detail/afankacbebechgbjdoliclmbpkkellhi" target="blank">Add to '+e+" - It's Free<a>";break}let t=document.getElementById("howitworks_video");function n(){let e=t.offsetTop+t.offsetHeight/2;window.pageYOffset+window.innerHeight>e&&t.play()}let d=0;t.addEventListener("timeupdate",(e=>{t.currentTime<4?1!=d&&(d=1,document.getElementById("step-2").classList.remove("highlighted"),document.getElementById("step-3").classList.remove("highlighted"),document.getElementById("step-1").classList.add("highlighted"),document.getElementById("step-2").nextElementSibling.classList.remove("focused"),document.getElementById("step-3").nextElementSibling.classList.remove("focused"),document.getElementById("step-1").nextElementSibling.classList.add("focused")):t.currentTime<8.1?2!=d&&(d=2,document.getElementById("step-1").classList.remove("highlighted"),document.getElementById("step-3").classList.remove("highlighted"),document.getElementById("step-2").classList.add("highlighted"),document.getElementById("step-1").nextElementSibling.classList.remove("focused"),document.getElementById("step-3").nextElementSibling.classList.remove("focused"),document.getElementById("step-2").nextElementSibling.classList.add("focused")):3!=d&&(d=3,document.getElementById("step-1").classList.remove("highlighted"),document.getElementById("step-2").classList.remove("highlighted"),document.getElementById("step-3").classList.add("highlighted"),document.getElementById("step-1").nextElementSibling.classList.remove("focused"),document.getElementById("step-2").nextElementSibling.classList.remove("focused"),document.getElementById("step-3").nextElementSibling.classList.add("focused"))})),window.addEventListener("scroll",n,!1),window.addEventListener("resize",n,!1),document.getElementById("step-1").nextElementSibling.addEventListener("click",(e=>{t.currentTime=0})),document.getElementById("step-2").nextElementSibling.addEventListener("click",(e=>{t.currentTime=4})),document.getElementById("step-3").nextElementSibling.addEventListener("click",(e=>{t.currentTime=8.1}))};
+    </script>
 </head>
 <body>
 
@@ -185,7 +55,6 @@
 
     <div class="content-box">
         <div class="horizontal">
-            <!--<video id="howitworks_video" width="750" autoplay loop muted>!-->
             <video id="howitworks_video" width="750" loop muted>
                 <source src="img/intro.mp4" type="video/mp4">
                 How it works
@@ -205,8 +74,8 @@
                     <div id="step-2" class="step">
                     </div>
                     <div class="clickable">
-                        <h3>2 Add your products</h3>
-                        Navigate to your favorite products and start tracking their prices.
+                        <h3>2 Track items</h3>
+                        Navigate to your favorite items and start tracking their prices.
                     </div>
                 </div>
                 <div style="display:flex;">
